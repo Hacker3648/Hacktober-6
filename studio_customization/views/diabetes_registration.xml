@@ -1,0 +1,1923 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <record id="contact_inherit_studio_custom" model="ir.ui.view">
+      <field name="name">contact_inherit_studio_custom</field>
+      <field name="inherit_id" search="[('key', '=', 'website.inscripcion-oficial-a-fundacion-diabeteslatam-1')]"/>
+      <field name="type">qweb</field>
+      <field name="key">studio_customization.contact_inherit_studio_custom</field>
+      <field name="arch" type="xml">
+         <xpath expr="//div/section[3]" position="replace">
+            <section class="s_website_form pt16 pb16" style="margin-bottom: 25px;" id="PreInscripcionFormulario">
+               <div class="container">
+               <div class="card">
+                  <div class="card-header">
+                     <p style="margin-bottom: 0px;">
+                        <font style="color: rgb(57, 132, 198); font-weight: bolder;">Validación de usuario</font>
+                     </p>
+                  </div>
+                  <div class="card-body" style="font-size: 14px;">
+                     <div class="py-2 s_website_form_field col-12">
+                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                           <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px !important; font-weight: bold;" for="pre_firstname01">
+                           <span class="s_website_form_label_content">Primer Nombre</span>
+                           </label>
+                           <div class="col-sm">
+                              <input type="text" class="form-control s_website_form_input" name="pre_firstname01" placeholder="" id="pre_firstname01" style="font-size: 14px;"/>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="py-2 s_website_form_field col-12">
+                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                           <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px !important; font-weight: bold;" for="pre_lastname01">
+                           <span class="s_website_form_label_content">Primer Apellido</span>
+                           </label>
+                           <div class="col-sm">
+                              <input type="text" class="form-control s_website_form_input" name="pre_lastname01" placeholder="" id="pre_lastname01" style="font-size: 14px;"/>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="py-2 s_website_form_field col-12" style="margin-bottom: 25px">
+                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                           <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px !important; font-weight: bold;" for="pre_email01">
+                           <span class="s_website_form_label_content">Correo Electrónico</span>
+                           </label>
+                           <div class="col-sm">
+                              <input type="email" class="form-control s_website_form_input" name="pre_email01" placeholder="" id="pre_email01" style="font-size: 14px;"/>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="mt-5">
+                        Los campos marcados con un * son obligatorios.
+                     </div>
+                     <div class="py-2 col-12 text-end" style="margin-bottom: 0px;" onclick="validarInscripcion()">
+                        <div style="width: 224px !important;" class="s_website_form_label"/>
+                           <a href="#" role="button" class="btn btn-primary btn-lg" style="margin-bottom: 0px;">
+                           <span style="font-size: 18px; font-weight: bolder;">Continuar registro</span>
+                           </a>
+                        </div>
+                        <div class="py-2 s_website_form_field col-12">
+                           <div class="row s_col_no_resize s_col_no_bgcolor">
+                              <span id="PreInscripcionError" class="text-danger ml8" style="visibility: hidden; width: 100%; text-align: right; margin-top: 20px; margin-right: 15px;">Fallo al realizar la consulta. Intente nuevamente</span>
+                              <br/>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </xpath>
+         <xpath expr="//form" position="replace">
+            <form action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-pre-fill="true" data-success-mode="redirect" data-success-page="/contactus-thank-you" data-model_name="crm.lead" autocomplete="off" id="studio_cust">
+               <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+               <div class="s_website_form_rows row s_col_no_bgcolor">
+               <section class="s_faq_collapse pb32 o_colored_level pt24" data-snippet="s_faq_collapse" data-name="Accordion" style="background-image: none;width: 100%;">
+                  <div class="container">
+                     <div id="myCollapse1644617309228" class="accordion" role="tablist">
+                        <div class="card" data-name="Item" style="">
+                           <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="true" class="card-header" data-bs-target="#myCollapse1647024375501">
+                              <p>
+                                 <font style="color: rgb(57, 132, 198); font-weight: bolder;">1. Datos&amp;nbsp;de quien&amp;nbsp;completa el formulario</font>
+                              </p>
+                           </a>
+                           <div class="collapse show" data-bs-parent="#myCollapse1644617309228" role="tabpanel" id="myCollapse1647024375501" style="">
+                              <div class="card-body" style="&#10;    font-size: 14px;&#10;">
+                                 <div data-visibility-condition="" data-visibility-between="" style="visibility: hidden;height: 0px !IMPORTANT;" class="py-2 s_website_form_field col-12 s_website_form_model_required" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="op6pi590ak5o">
+                                       <span class="s_website_form_label_content">Motivo</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" autocomplete="off" name="name" placeholder="Inscripción Fundación DiabetesLATAM" id="op6pi590ak5o"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px !important;" for="ow870xkarbwd">
+                                       <span class="s_website_form_label_content">1. Primer Nombre</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="contact_name" required="1" placeholder="" id="ow870xkarbwd" style="font-size: 14px;" readonly="readonly"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px !important;" for="oofnfxw8urea">
+                                       <span class="s_website_form_label_content">2. Segundo Nombre</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_nombre_2" placeholder="" id="oofnfxw8urea" style="font-size: 14px;"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px !important;" for="o37xa2l413ui">
+                                       <span class="s_website_form_label_content">3. Apellido</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_apellido_1" required="1" placeholder="" id="o37xa2l413ui" style="font-size: 14px;" readonly="readonly"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px !important;" for="o3umbvdfj5s8">
+                                       <span class="s_website_form_label_content">4. Segundo Apellido</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_apellido_2" placeholder="" id="o3umbvdfj5s8" style="font-size: 14px;"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px !important;" for="oosjngi0el3j">
+                                       <span class="s_website_form_label_content">5. Número de Identificación (Cédula o Pasaporte)</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="number" class="form-control s_website_form_input" name="x_studio_identificacin_miembro"  placeholder="" id="oosjngi0el3j" style="font-size: 14px;"/>
+                                       </div>
+                                    </div>
+                                    <h6>Éste será su número de identificación único como miembro de la fundación, asegúrese de ingresarlo correctamente.</h6>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px !important;">
+                                       <span class="s_website_form_label_content">6. Sexo</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <select class="form-control s_website_form_input" name="sex">
+                                             <option value="Femenino">Femenino</option>
+                                             <option value="Masculino">Masculino</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px !important;" for="9i3ulp04dlu">
+                                       <span class="s_website_form_label_content">Email / Correo electrónico</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="email_from" required="1" placeholder="" id="9i3ulp04dlu" style="font-size: 14px;" readonly="readonly"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="many2one" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="oe7d5stal7co">
+                                       <span class="s_website_form_label_content">7. País donde reside</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <select class="form-control country_id s_website_form_input" name="country_id" required="1" id="oe7d5stal7co" style="">
+                                             <option value="Afganistán">Afganistán</option>
+                                             <option value="Albania">Albania</option>
+                                             <option value="Alemania">Alemania</option>
+                                             <option value="Andorra">Andorra</option>
+                                             <option value="Angola">Angola</option>
+                                             <option value="Anguilla">Anguilla</option>
+                                             <option value="Antigua y Barbuda">Antigua y Barbuda</option>
+                                             <option value="Antártida">Antártida</option>
+                                             <option value="Arabia Saudita">Arabia Saudita</option>
+                                             <option value="Argelia">Argelia</option>
+                                             <option value="Argentina">Argentina</option>
+                                             <option value="Armenia">Armenia</option>
+                                             <option value="Aruba">Aruba</option>
+                                             <option value="Australia">Australia</option>
+                                             <option value="Austria">Austria</option>
+                                             <option value="Azerbaiyán">Azerbaiyán</option>
+                                             <option value="Bahamas">Bahamas</option>
+                                             <option value="Bahréin">Bahréin</option>
+                                             <option value="Bangladesh">Bangladesh</option>
+                                             <option value="Barbados">Barbados</option>
+                                             <option value="Belice">Belice</option>
+                                             <option value="Benín">Benín</option>
+                                             <option value="Bermudas">Bermudas</option>
+                                             <option value="Bhután">Bhután</option>
+                                             <option value="Bielorrusia">Bielorrusia</option>
+                                             <option value="Birmania">Birmania</option>
+                                             <option value="Bolivia">Bolivia</option>
+                                             <option value="Bonaire, San Eustaquio y Saba">Bonaire, San Eustaquio y Saba</option>
+                                             <option value="Bosnia-Herzegovina">Bosnia-Herzegovina</option>
+                                             <option value="Botsuana">Botsuana</option>
+                                             <option value="Brasil">Brasil</option>
+                                             <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                             <option value="Bulgaria">Bulgaria</option>
+                                             <option value="Burkina Faso">Burkina Faso</option>
+                                             <option value="Burundi">Burundi</option>
+                                             <option value="Bélgica">Bélgica</option>
+                                             <option value="Cabo Verde">Cabo Verde</option>
+                                             <option value="Camboya">Camboya</option>
+                                             <option value="Camerún">Camerún</option>
+                                             <option value="Canadá">Canadá</option>
+                                             <option value="Chad">Chad</option>
+                                             <option value="Chile">Chile</option>
+                                             <option value="China">China</option>
+                                             <option value="Chipre">Chipre</option>
+                                             <option value="Colombia">Colombia</option>
+                                             <option value="Comores">Comores</option>
+                                             <option value="Congo">Congo</option>
+                                             <option value="Corea del Norte">Corea del Norte</option>
+                                             <option value="Corea del Sur">Corea del Sur</option>
+                                             <option value="Costa Rica">Costa Rica</option>
+                                             <option value="Costa de Marfil">Costa de Marfil</option>
+                                             <option value="Croacia">Croacia</option>
+                                             <option value="Cuba">Cuba</option>
+                                             <option value="Curaçao">Curaçao</option>
+                                             <option value="Dinamarca">Dinamarca</option>
+                                             <option value="Dominica">Dominica</option>
+                                             <option value="EE.UU. Islas Exteriores Menores">EE.UU. Islas Exteriores Menores</option>
+                                             <option value="Ecuador">Ecuador</option>
+                                             <option value="Egipto">Egipto</option>
+                                             <option value="El Salvador">El Salvador</option>
+                                             <option value="Emiratos Árabes Unidos">Emiratos Árabes Unidos</option>
+                                             <option value="Eritrea">Eritrea</option>
+                                             <option value="Eslovaquia">Eslovaquia</option>
+                                             <option value="Eslovenia">Eslovenia</option>
+                                             <option value="España">España</option>
+                                             <option value="Estado de Palestina">Estado de Palestina</option>
+                                             <option value="Estados Unidos">Estados Unidos</option>
+                                             <option value="Estonia">Estonia</option>
+                                             <option value="Etiopía">Etiopía</option>
+                                             <option value="Federación Rusa">Federación Rusa</option>
+                                             <option value="Fiji">Fiji</option>
+                                             <option value="Filipinas">Filipinas</option>
+                                             <option value="Finlandia">Finlandia</option>
+                                             <option value="Francia">Francia</option>
+                                             <option value="Gabón">Gabón</option>
+                                             <option value="Gambia">Gambia</option>
+                                             <option value="Georgia">Georgia</option>
+                                             <option value="Ghana">Ghana</option>
+                                             <option value="Gibraltar">Gibraltar</option>
+                                             <option value="Granada">Granada</option>
+                                             <option value="Grecia">Grecia</option>
+                                             <option value="Groenlandia">Groenlandia</option>
+                                             <option value="Guadalupe">Guadalupe</option>
+                                             <option value="Guam">Guam</option>
+                                             <option value="Guatemala">Guatemala</option>
+                                             <option value="Guayana">Guayana</option>
+                                             <option value="Guayana Francesa">Guayana Francesa</option>
+                                             <option value="Guernsey">Guernsey</option>
+                                             <option value="Guinea">Guinea</option>
+                                             <option value="Guinea Ecuatorial">Guinea Ecuatorial</option>
+                                             <option value="Guinea-Bisáu">Guinea-Bisáu</option>
+                                             <option value="Haití">Haití</option>
+                                             <option value="Holanda">Holanda</option>
+                                             <option value="Honduras">Honduras</option>
+                                             <option value="Hong Kong">Hong Kong</option>
+                                             <option value="Hungría">Hungría</option>
+                                             <option value="India">India</option>
+                                             <option value="Indonesia">Indonesia</option>
+                                             <option value="Irak">Irak</option>
+                                             <option value="Irlanda">Irlanda</option>
+                                             <option value="Irán">Irán</option>
+                                             <option value="Isla Bouvet">Isla Bouvet</option>
+                                             <option value="Isla Norfolk">Isla Norfolk</option>
+                                             <option value="Isla de Man">Isla de Man</option>
+                                             <option value="Isla de Navidad">Isla de Navidad</option>
+                                             <option value="Islandia">Islandia</option>
+                                             <option value="Islas Caimán">Islas Caimán</option>
+                                             <option value="Islas Cocos (Keeling)">Islas Cocos (Keeling)</option>
+                                             <option value="Islas Cook">Islas Cook</option>
+                                             <option value="Islas Feroe">Islas Feroe</option>
+                                             <option value="Islas Georgia del sur y Sandwich del sur">Islas Georgia del sur y Sandwich del sur</option>
+                                             <option value="Islas Heard y McDonald">Islas Heard y McDonald</option>
+                                             <option value="Islas Malvinas">Islas Malvinas</option>
+                                             <option value="Islas Marianas del Norte">Islas Marianas del Norte</option>
+                                             <option value="Islas Marshall">Islas Marshall</option>
+                                             <option value="Islas Pitcairn">Islas Pitcairn</option>
+                                             <option value="Islas Salomón">Islas Salomón</option>
+                                             <option value="Islas Turcas y Caicos">Islas Turcas y Caicos</option>
+                                             <option value="Islas Vírgenes (Británicas)">Islas Vírgenes (Británicas)</option>
+                                             <option value="Islas Vírgenes (EE.UU.)">Islas Vírgenes (EE.UU.)</option>
+                                             <option value="Islas Åland">Islas Åland</option>
+                                             <option value="Israel">Israel</option>
+                                             <option value="Italia">Italia</option>
+                                             <option value="Jamaica">Jamaica</option>
+                                             <option value="Japón">Japón</option>
+                                             <option value="Jersey">Jersey</option>
+                                             <option value="Jordania">Jordania</option>
+                                             <option value="Kazajstán">Kazajstán</option>
+                                             <option value="Kenia">Kenia</option>
+                                             <option value="Kirguistán">Kirguistán</option>
+                                             <option value="Kiribati">Kiribati</option>
+                                             <option value="Kosovo">Kosovo</option>
+                                             <option value="Kuwait">Kuwait</option>
+                                             <option value="Laos">Laos</option>
+                                             <option value="Lesotho">Lesotho</option>
+                                             <option value="Letonia">Letonia</option>
+                                             <option value="Liberia">Liberia</option>
+                                             <option value="Libia">Libia</option>
+                                             <option value="Liechtenstein">Liechtenstein</option>
+                                             <option value="Lituania">Lituania</option>
+                                             <option value="Luxemburgo">Luxemburgo</option>
+                                             <option value="Líbano">Líbano</option>
+                                             <option value="Macao">Macao</option>
+                                             <option value="Macedonia del Norte">Macedonia del Norte</option>
+                                             <option value="Madagascar">Madagascar</option>
+                                             <option value="Malasia">Malasia</option>
+                                             <option value="Malawi">Malawi</option>
+                                             <option value="Maldivas">Maldivas</option>
+                                             <option value="Mali">Mali</option>
+                                             <option value="Malta">Malta</option>
+                                             <option value="Marruecos">Marruecos</option>
+                                             <option value="Martinica">Martinica</option>
+                                             <option value="Mauricio">Mauricio</option>
+                                             <option value="Mauritania">Mauritania</option>
+                                             <option value="México">México</option>
+                                             <option value="Micronesia">Micronesia</option>
+                                             <option value="Moldavia">Moldavia</option>
+                                             <option value="Mónaco">Mónaco</option>
+                                             <option value="Mongolia">Mongolia</option>
+                                             <option value="Mozambique">Mozambique</option>
+                                             <option value="Namibia">Namibia</option>
+                                             <option value="Nauru">Nauru</option>
+                                             <option value="Nepal">Nepal</option>
+                                             <option value="Nicarágua">Nicarágua</option>
+                                             <option value="Níger">Níger</option>
+                                             <option value="Nigeria">Nigeria</option>
+                                             <option value="Noruega">Noruega</option>
+                                             <option value="Nueva Caledonia">Nueva Caledonia</option>
+                                             <option value="Nueva Zelanda">Nueva Zelanda</option>
+                                             <option value="Omán">Omán</option>
+                                             <option value="Pakistán">Pakistán</option>
+                                             <option value="Palaos">Palaos</option>
+                                             <option value="Panamá">Panamá</option>
+                                             <option value="Papúa Nueva Guinea">Papúa Nueva Guinea</option>
+                                             <option value="Paraguay">Paraguay</option>
+                                             <option value="Perú">Perú</option>
+                                             <option value="Polonia">Polonia</option>
+                                             <option value="Portugal">Portugal</option>
+                                             <option value="Puerto Rico">Puerto Rico</option>
+                                             <option value="Reino Unido">Reino Unido</option>
+                                             <option value="República Centroafricana">República Centroafricana</option>
+                                             <option value="República Checa">República Checa</option>
+                                             <option value="República de Corea">República de Corea</option>
+                                             <option value="República Democrática del Congo">República Democrática del Congo</option>
+                                             <option value="República Dominicana">República Dominicana</option>
+                                             <option value="Rumania">Rumania</option>
+                                             <option value="Rusia">Rusia</option>
+                                             <option value="Sahara Occidental">Sahara Occidental</option>
+                                             <option value="Samoa">Samoa</option>
+                                             <option value="Samoa Americana">Samoa Americana</option>
+                                             <option value="San Bartolomé">San Bartolomé</option>
+                                             <option value="San Cristóbal y Nieves">San Cristóbal y Nieves</option>
+                                             <option value="San Marino">San Marino</option>
+                                             <option value="San Vicente y las Granadinas">San Vicente y las Granadinas</option>
+                                             <option value="Santa Helena">Santa Helena</option>
+                                             <option value="Santa Lucía">Santa Lucía</option>
+                                             <option value="Santo Tomé y Príncipe">Santo Tomé y Príncipe</option>
+                                             <option value="Senegal">Senegal</option>
+                                             <option value="Serbia">Serbia</option>
+                                             <option value="Seychelles">Seychelles</option>
+                                             <option value="Sierra Leona">Sierra Leona</option>
+                                             <option value="Singapur">Singapur</option>
+                                             <option value="Suecia">Suecia</option>
+                                             <option value="Suiza">Suiza</option>
+                                             <option value="Siria">Siria</option>
+                                             <option value="Tailandia">Tailandia</option>
+                                             <option value="Tanzania">Tanzania</option>
+                                             <option value="Tayikistán">Tayikistán</option>
+                                             <option value="Timor-Leste">Timor-Leste</option>
+                                             <option value="Togo">Togo</option>
+                                             <option value="Tonga">Tonga</option>
+                                             <option value="Trinidad y Tobago">Trinidad y Tobago</option>
+                                             <option value="Túnez">Túnez</option>
+                                             <option value="Turkmenistán">Turkmenistán</option>
+                                             <option value="Turquía">Turquía</option>
+                                             <option value="Tuvalu">Tuvalu</option>
+                                             <option value="Ucrania">Ucrania</option>
+                                             <option value="Uganda">Uganda</option>
+                                             <option value="Uruguay">Uruguay</option>
+                                             <option value="Uzbekistán">Uzbekistán</option>
+                                             <option value="Vanuatu">Vanuatu</option>
+                                             <option value="Venezuela">Venezuela</option>
+                                             <option value="Vietnam">Vietnam</option>
+                                             <option value="Yemen">Yemen</option>
+                                             <option value="Zambia">Zambia</option>
+                                             <option value="Zimbabue">Zimbabue</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px !important;" for="o1x6djfzjpst">
+                                       <span class="s_website_form_label_content">8. Teléfono / Celular</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="phone" required="1" placeholder="" id="o1x6djfzjpst" style="font-size: 14px;"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 d-none" data-type="many2many" data-name="Field">
+                                    <label class="s_website_form_label d-none form-label" style="width: 224px" for="odm4ju47hds5">
+                                    <span class="s_website_form_label_content">Programas de interés</span>
+                                    </label>
+                                    <div>
+                                       <label class="s_website_form_label form-label" for="md82s194oic" style="/* width: 224px !important; */">
+                                       <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">9. ¿En cuál(es) de nuestros programas te interesa participar? *</span>
+                                       </label>
+                                       <br/>
+                                       <label class="s_website_form_label form-label" style="/* width: 224px !important; */margin-top: 8px;">
+                                       <i>
+                                       <span class="s_website_form_label_content" style="color: rgb(40, 116, 166); font-size: 14px;">Programas para niños, adolescentes y jóvenes con diabetes tipo 1</span>
+                                       </i>
+                                       </label>
+                                    </div>
+                                    <div class="row s_col_no_resize s_col_no_bgcolor s_website_form_multiple" data-name="x_studio_many2many_field_k1Juo" data-bs-display="horizontal">
+                                       <div class="checkbox col-12">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="odm4ju47hds50" name="x_studio_many2many_field_k1Juo" value="1"/>
+                                             <label class="form-check-label s_website_form_check_label" for="odm4ju47hds50">
+                                             Aplicación web educativa Mi Diapp
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="odm4ju47hds51" name="x_studio_many2many_field_k1Juo" value="2"/>
+                                             <label class="form-check-label s_website_form_check_label" for="odm4ju47hds51">
+                                             Campamentos virtuales
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="odm4ju47hds52" name="x_studio_many2many_field_k1Juo" value="3"/>
+                                             <label class="form-check-label s_website_form_check_label" for="odm4ju47hds52">
+                                             Campamentos presenciales
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <br/>
+                                       <label class="s_website_form_label form-label" style="/* width: 224px !important; */margin-left:12px;margin-top: 15px;">
+                                       <i>
+                                       <span class="s_website_form_label_content" style="color: rgb(40, 116, 166); font-size: 14px;">Programas para padres y cuidadores</span>
+                                       </i>
+                                       </label>
+                                       <div class="checkbox col-12">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="odm4ju47hds53" name="x_studio_many2many_field_k1Juo" value="4"/>
+                                             <label class="form-check-label s_website_form_check_label" for="odm4ju47hds53">
+                                             Programa de donación de insulina e insumos Vida para la Diabetes
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="odm4ju47hds54" name="x_studio_many2many_field_k1Juo" value="5"/>
+                                             <label class="form-check-label s_website_form_check_label" for="odm4ju47hds54">
+                                             Plataforma virtual educativa Aprendamos de Diabetes Tipo 1
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="odm4ju47hds55" name="x_studio_many2many_field_k1Juo" value="6"/>
+                                             <label class="form-check-label s_website_form_check_label" for="odm4ju47hds55">
+                                             Talleres y charlas virtuales
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="odm4ju47hds56" name="x_studio_many2many_field_k1Juo" value="7"/>
+                                             <label class="form-check-label s_website_form_check_label" for="odm4ju47hds56">
+                                             Talleres y charlas presenciales
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="odm4ju47hds57" name="x_studio_many2many_field_k1Juo" value="8"/>
+                                             <label class="form-check-label s_website_form_check_label" for="odm4ju47hds57">
+                                             Programa educativo para recién diagnosticados Mi Ruta Segura
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <br/>
+                                       <label class="s_website_form_label form-label" style="/* width: 224px !important; */ margin-left:12px;margin-top: 15px;">
+                                       <i>
+                                       <span class="s_website_form_label_content" style="color: rgb(40, 116, 166); font-size: 14px;">Programas para maestros y escuelas</span>
+                                       </i>
+                                       </label>
+                                       <div class="checkbox col-12">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="odm4ju47hds58" name="x_studio_many2many_field_k1Juo" value="9"/>
+                                             <label class="form-check-label s_website_form_check_label" for="odm4ju47hds58">
+                                             Plataforma virtual educativa Diabetes &amp;amp; Escuelas
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <br/>
+                                 <br/>
+                                 <div>
+                                    <label class="s_website_form_label form-label" for="kpl9u761lhs" style="/* width: 224px !important; */">
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">9. Tipo de relación en el cuidado de la persona con diabetes tipo 1 *</span>
+                                    </label>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="many2one" data-name="Field">
+                                    <label class="s_website_form_label d-none form-label" style="width: 240px" for="ok7urq13h5dt">
+                                    <span class="s_website_form_label_content">Tipo de Relación</span>
+                                    <span class="s_website_form_mark"> *</span>
+                                    </label>
+                                    <select class="form-control 1_detail s_website_form_input" name="x_studio_many2one_field_RVWpx" required="1" id="oelfw3tpyfr" style="">
+                                       <option value="1" selected="selected">Tengo diabetes tipo 1</option>
+                                       <option value="2">Soy Cuidador de una Persona con Diabetes Tipo</option>
+                                       <option value="3">Interesados</option>
+                                    </select>
+                                 </div>
+                                 <div class="py-2 s_website_form_field col-12 s_website_form_field_hidden_if d-none 1_select_hidden" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="ojwqdozhoqng">
+                                       <span class="s_website_form_label_content">Diabetes Tipo</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <select class="form-control 1_detail_hidden s_website_form_input" name="1_detail_hidden" required="1">
+                                             <option value="1">Madre</option>
+                                             <option value="2">Padre</option>
+                                             <option value="3">Hermana(o)</option>
+                                             <option value="4">Cónyuge</option>
+                                             <option value="5">Abuela(o)</option>
+                                             <option value="9">Otro</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <div class="py-2 s_website_form_field col-12 s_website_form_field_hidden_if d-none others" data-type="char" data-name="Field">
+                                       <div class="row s_col_no_resize s_col_no_bgcolor">
+                                          <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="ojwqdozhoqng">
+                                          <span class="s_website_form_label_content">Especifica</span>
+                                          </label>
+                                          <div class="col-sm">
+                                             <input type="text" class="form-control s_website_form_input" name="x_studio_rol" value="" placeholder="" id="ojwqdozhoqng" data-fill-with="undefined"/>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="py-2 s_website_form_field col-12 s_website_form_field_hidden_if d-none 2_select_hidden" data-type="char" data-name="Field">
+                                    <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="ojwqdozhoqng">
+                                    <span class="s_website_form_label_content">Select</span>
+                                    </label>
+                                    <div class="col-sm">
+                                       <select class="form-control 2_detail_hidden s_website_form_input" name="2_detail_hidden" required="1">
+                                          <option value="7">Maestro o administrativo de escuelas</option>
+                                          <option value="8">Profesionales de la salud</option>
+                                          <option value="9">Ninguna relación, pero me interesa aprender de diabetes tipo 1</option>
+                                       </select>
+                                    </div>
+                                 </div>
+                                 <div class="panama d-none">
+                                    <label class="s_website_form_label form-label" for="kpl9u761lhs" style="/* width: 224px !important; */">
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">10. ¿Te interesaría ser voluntario o líder de la fundación? *</span>
+                                    </label>
+                                    <br/>
+                                    <div style="margin-left: 3%;">
+                                       <input type="radio" checked="" name="yes-no">Sí</input>
+                                       <br/>
+                                       <input type="radio" name="yes-no">No</input>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="card" data-name="Item" style="">
+                           <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="false" class="card-header collapsed" data-bs-target="#myCollapseTab1647024375503">
+                              <p>
+                                 <font style="color: rgb(57, 132, 198); font-weight: bolder;">2. Datos&amp;nbsp;de la persona con diabetes tipo 1</font>
+                                 <span style="font-weight: bolder;">
+                                 <font style="color: rgb(57, 132, 198);"/>
+                                 </span>
+                              </p>
+                           </a>
+                           <div class="collapse" data-bs-parent="#myCollapse1644617309228" role="tabpanel" id="myCollapseTab1647024375503" style="">
+                              <div class="card-body">
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="oev390vtbr3q">
+                                       <span class="s_website_form_label_content">1. Primer Nombre</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_pac_nombre_1" required="1" value="" placeholder="" id="oev390vtbr3q" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="otswzbk632dl">
+                                       <span class="s_website_form_label_content">2. Segundo Nombre</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_pac_nombre_2" value="" placeholder="" id="otswzbk632dl" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="oiddsrzwdb6">
+                                       <span class="s_website_form_label_content">3. Primer Apellido</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_pac_apellido_1" required="1" value="" placeholder="" id="oiddsrzwdb6" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="o543ay5a763r">
+                                       <span class="s_website_form_label_content">4. Segundo Apellido</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_pac_apellido_2" value="" placeholder="" id="o543ay5a763r" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="py-2 s_website_form_field form_2 col-12 s_website_form_required" data-type="many2one" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="osa8xw6go4y">
+                                       <span class="s_website_form_label_content">5. País de Residencia</span>
+                                       <span class="s_website_form_mark">       *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <select class="form-control s_website_form_input 2_country" name="x_studio_pas_residencia_paciente" required="1" id="osa8xw6go4y" style="">
+                                             <option value="3">Afganistán</option>
+                                             <option value="6">Albania</option>
+                                             <option value="57">Alemania</option>
+                                             <option value="1">Andorra</option>
+                                             <option value="8">Angola</option>
+                                             <option value="5">Anguilla</option>
+                                             <option value="4">Antigua y Barbuda</option>
+                                             <option value="9">Antártida</option>
+                                             <option value="192">Arabia Saudita</option>
+                                             <option value="62">Argelia</option>
+                                             <option value="10">Argentina</option>
+                                             <option value="7">Armenia</option>
+                                             <option value="14">Aruba</option>
+                                             <option value="13">Australia</option>
+                                             <option value="12">Austria</option>
+                                             <option value="16">Azerbaiyán</option>
+                                             <option value="32">Bahamas</option>
+                                             <option value="23">Bahréin</option>
+                                             <option value="19">Bangladesh</option>
+                                             <option value="18">Barbados</option>
+                                             <option value="37">Belize</option>
+                                             <option value="25">Benín</option>
+                                             <option value="27">Bermudas</option>
+                                             <option value="33">Bhután</option>
+                                             <option value="36">Bielorrusia</option>
+                                             <option value="145">Birmania</option>
+                                             <option value="29">Bolivia</option>
+                                             <option value="30">Bonaire, San Eustaquio y Saba</option>
+                                             <option value="17">Bosnia-Herzegovina</option>
+                                             <option value="35">Botsuana</option>
+                                             <option value="31">Brasil</option>
+                                             <option value="28">Brunei Darussalam</option>
+                                             <option value="22">Bulgaria</option>
+                                             <option value="21">Burkina Faso</option>
+                                             <option value="24">Burundi</option>
+                                             <option value="20">Bélgica</option>
+                                             <option value="52">Cabo Verde</option>
+                                             <option value="116">Camboya</option>
+                                             <option value="47">Camerún</option>
+                                             <option value="38">Canadá</option>
+                                             <option value="214">Chad</option>
+                                             <option value="46">Chile</option>
+                                             <option value="48">China</option>
+                                             <option value="55">Chipre</option>
+                                             <option value="49">Colombia</option>
+                                             <option value="118">Comores</option>
+                                             <option value="42">Congo</option>
+                                             <option value="120">Corea del Norte</option>
+                                             <option value="121">Corea del Sur</option>
+                                             <option value="50">Costa Rica</option>
+                                             <option value="44">Costa de Marfil</option>
+                                             <option value="97">Croacia</option>
+                                             <option value="51">Cuba</option>
+                                             <option value="53">Curaçao</option>
+                                             <option value="59">Dinamarca</option>
+                                             <option value="60">Dominica</option>
+                                             <option value="232">EE.UU. Islas Exteriores Menores</option>
+                                             <option value="63">Ecuador</option>
+                                             <option value="65">Egipto</option>
+                                             <option value="209">El Salvador</option>
+                                             <option value="2">Emiratos Árabes Unidos</option>
+                                             <option value="67">Eritrea</option>
+                                             <option value="201">Eslovaquia</option>
+                                             <option value="199">Eslovenia</option>
+                                             <option value="68">España</option>
+                                             <option value="182">Estado de Palestina</option>
+                                             <option value="233">Estados Unidos</option>
+                                             <option value="64">Estonia</option>
+                                             <option value="69">Etiopía</option>
+                                             <option value="190">Federación Rusa</option>
+                                             <option value="71">Fiji</option>
+                                             <option value="176">Filipinas</option>
+                                             <option value="70">Finlandia</option>
+                                             <option value="75">Francia</option>
+                                             <option value="76">Gabón</option>
+                                             <option value="84">Gambia</option>
+                                             <option value="78">Georgia</option>
+                                             <option value="80">Ghana</option>
+                                             <option value="81">Gibraltar</option>
+                                             <option value="77">Granada</option>
+                                             <option value="88">Grecia</option>
+                                             <option value="83">Groenlandia</option>
+                                             <option value="86">Guadalupe</option>
+                                             <option value="91">Guam</option>
+                                             <option value="90">Guatemala</option>
+                                             <option value="93">Guayana</option>
+                                             <option value="79">Guayana Francesa</option>
+                                             <option value="82">Guernsey</option>
+                                             <option value="85">Guinea</option>
+                                             <option value="87">Guinea Ecuatorial</option>
+                                             <option value="92">Guinea-Bisáu</option>
+                                             <option value="98">Haití</option>
+                                             <option value="165">Holanda</option>
+                                             <option value="96">Honduras</option>
+                                             <option value="94">Hong Kong</option>
+                                             <option value="99">Hungría</option>
+                                             <option value="104">India</option>
+                                             <option value="100">Indonesia</option>
+                                             <option value="106">Irak</option>
+                                             <option value="101">Irlanda</option>
+                                             <option value="107">Irán</option>
+                                             <option value="34">Isla Bouvet</option>
+                                             <option value="162">Isla Norfolk</option>
+                                             <option value="103">Isla de Man</option>
+                                             <option value="54">Isla de Navidad</option>
+                                             <option value="108">Islandia</option>
+                                             <option value="123">Islas Caimán</option>
+                                             <option value="39">Islas Cocos (Keeling)</option>
+                                             <option value="45">Islas Cook</option>
+                                             <option value="74">Islas Feroe</option>
+                                             <option value="89">Islas Georgia del sur y Sandwich del sur</option>
+                                             <option value="95">Islas Heard y McDonald</option>
+                                             <option value="72">Islas Malvinas</option>
+                                             <option value="148">Islas Marianas del Norte</option>
+                                             <option value="142">Islas Marshall</option>
+                                             <option value="180">Islas Pitcairn</option>
+                                             <option value="193">Islas Salomón</option>
+                                             <option value="213">Islas Turcas y Caicos</option>
+                                             <option value="239">Islas Vírgenes (Británicas)</option>
+                                             <option value="240">Islas Vírgenes (EE.UU.)</option>
+                                             <option value="15">Islas Åland</option>
+                                             <option value="102">Israel</option>
+                                             <option value="109">Italia</option>
+                                             <option value="111">Jamaica</option>
+                                             <option value="113">Japón</option>
+                                             <option value="110">Jersey</option>
+                                             <option value="112">Jordania</option>
+                                             <option value="124">Kazajstán</option>
+                                             <option value="114">Kenia</option>
+                                             <option value="115">Kirguistán</option>
+                                             <option value="117">Kiribati</option>
+                                             <option value="250">Kosovo</option>
+                                             <option value="122">Kuwait</option>
+                                             <option value="125">Laos</option>
+                                             <option value="131">Lesotho</option>
+                                             <option value="134">Letonia</option>
+                                             <option value="130">Liberia</option>
+                                             <option value="135">Libia</option>
+                                             <option value="128">Liechtenstein</option>
+                                             <option value="132">Lituania</option>
+                                             <option value="133">Luxemburgo</option>
+                                             <option value="126">Líbano</option>
+                                             <option value="147">Macao</option>
+                                             <option value="143">Macedonia del Norte</option>
+                                             <option value="141">Madagascar</option>
+                                             <option value="157">Malasia</option>
+                                             <option value="155">Malawi</option>
+                                             <option value="154">Maldivas</option>
+                                             <option value="144">Mali</option>
+                                             <option value="152">Malta</option>
+                                             <option value="136">Marruecos</option>
+                                             <option value="149">Martinica</option>
+                                             <option value="153">Mauricio</option>
+                                             <option value="150">Mauritania</option>
+                                             <option value="246">Mayotte</option>
+                                             <option value="73">Micronesia</option>
+                                             <option value="138">Moldavia</option>
+                                             <option value="146">Mongolia</option>
+                                             <option value="139">Montenegro</option>
+                                             <option value="151">Montserrat</option>
+                                             <option value="158">Mozambique</option>
+                                             <option value="156">México</option>
+                                             <option value="137">Mónaco</option>
+                                             <option value="159">Namibia</option>
+                                             <option value="168">Nauru</option>
+                                             <option value="167">Nepal</option>
+                                             <option value="164">Nicaragua</option>
+                                             <option value="163">Nigeria</option>
+                                             <option value="169">Niue</option>
+                                             <option value="230">No aplica</option>
+                                             <option value="166">Noruega</option>
+                                             <option value="160">Nueva Caledonia</option>
+                                             <option value="170">Nueva Zelanda</option>
+                                             <option value="161">Níger</option>
+                                             <option value="171">Omán</option>
+                                             <option value="177">Pakistán</option>
+                                             <option value="184">Palau</option>
+                                             <option value="172">Panamá</option>
+                                             <option value="175">Papúa Nueva Guinea</option>
+                                             <option value="185">Paraguay</option>
+                                             <option value="173">Perú</option>
+                                             <option value="174">Polinesia Francesa</option>
+                                             <option value="178">Polonia</option>
+                                             <option value="183">Portugal</option>
+                                             <option value="181">Puerto Rico</option>
+                                             <option value="186">Qatar</option>
+                                             <option value="231">Reino Unido</option>
+                                             <option value="40">República Centro Africana</option>
+                                             <option value="56">República Checa</option>
+                                             <option value="41">República Democrática del Congo</option>
+                                             <option value="61">República Dominicana</option>
+                                             <option value="187">Reunión</option>
+                                             <option value="191">Ruanda</option>
+                                             <option value="188">Rumania</option>
+                                             <option value="244">Samoa</option>
+                                             <option value="11">Samoa Americana</option>
+                                             <option value="26">San Bartolomé</option>
+                                             <option value="119">San Cristóbal y Nieves</option>
+                                             <option value="203">San Marino</option>
+                                             <option value="210">San Martín (parte holandesa)</option>
+                                             <option value="140">San Martín (zona francesa)</option>
+                                             <option value="179">San Pierre y Miquelon</option>
+                                             <option value="237">San Vicente y las Granadinas</option>
+                                             <option value="198">Santa Elena, Ascensión y Tristán de Acuña </option>
+                                             <option value="127">Santa Lucía</option>
+                                             <option value="236">Santa Sede (Ciudad Estado del Vaticano)</option>
+                                             <option value="208">Santo Tomé y Príncipe</option>
+                                             <option value="204">Senegal</option>
+                                             <option value="189">Serbia</option>
+                                             <option value="194">Seychelles</option>
+                                             <option value="202">Sierra Leona</option>
+                                             <option value="197">Singapur</option>
+                                             <option value="211">Siria</option>
+                                             <option value="205">Somalia</option>
+                                             <option value="129">Sri Lanka</option>
+                                             <option value="212">Suazilandia</option>
+                                             <option value="247">Sudáfrica</option>
+                                             <option value="195">Sudán</option>
+                                             <option value="207">Sudán del Sur</option>
+                                             <option value="196">Suecia</option>
+                                             <option value="43">Suiza</option>
+                                             <option value="206">Surinam</option>
+                                             <option value="200">Svalbard y Jan Mayen</option>
+                                             <option value="66">Sáhara occidental</option>
+                                             <option value="217">Tailandia</option>
+                                             <option value="227">Taiwán</option>
+                                             <option value="218">Tajikistán</option>
+                                             <option value="228">Tanzania</option>
+                                             <option value="105">Territorio británico del Océano Índico</option>
+                                             <option value="215">Territorios franceses del sur</option>
+                                             <option value="223">Timor Oriental</option>
+                                             <option value="216">Togo</option>
+                                             <option value="219">Tokelau</option>
+                                             <option value="222">Tonga</option>
+                                             <option value="225">Trinidad y Tobago</option>
+                                             <option value="220">Turkmekistán</option>
+                                             <option value="224">Turquía</option>
+                                             <option value="226">Tuvalu</option>
+                                             <option value="221">Túnez</option>
+                                             <option value="229">Ucrania</option>
+                                             <option value="234">Uruguay</option>
+                                             <option value="235">Uzbekistán</option>
+                                             <option value="242">Vanuatu</option>
+                                             <option value="238">Venezuela</option>
+                                             <option value="241">Vietnam</option>
+                                             <option value="243">Wallis y Futuna</option>
+                                             <option value="245">Yemen</option>
+                                             <option value="58">Yibuti</option>
+                                             <option value="248">Zambia</option>
+                                             <option value="249">Zimbabwe</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field address_2 d-none col-12" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="o2v6a03dv56n">
+                                       <span class="s_website_form_label_content">Dirección</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_direccin" value="" placeholder="" id="o2v6a03dv56n" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 city_2 d-none" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="oi1nj3hy5nef">
+                                       <span class="s_website_form_label_content">Ciudad</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_ciudad" value="" placeholder="" id="oi1nj3hy5nef" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="py-2 s_website_form_field col-12 s_website_form_required Provincia_field d-none" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="on6bw00pur8r">
+                                       <span class="s_website_form_label_content">Provincia</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <select class="form-control s_website_form_input" name="Provincia" required="1" id="Provincia" style="">
+                                             <option value="Bocas del Toro">Bocas del Toro</option>
+                                             <option value="Coclé">Coclé</option>
+                                             <option value="Colón">Colón</option>
+                                             <option value="Chiriquí">Chiriquí</option>
+                                             <option value="Darién">Darién</option>
+                                             <option value="Herrera">Herrera</option>
+                                             <option value="Los Santos">Los Santos</option>
+                                             <option value="Panamá">Panamá</option>
+                                             <option value="Panamá Oeste">Panamá Oeste</option>
+                                             <option value="Veraguas">Veraguas</option>
+                                             <option value="Emberá-Wounaan">Emberá-Wounaan</option>
+                                             <option value="Guna Yala">Guna Yala</option>
+                                             <option value="Ngöbe-Buglé">Ngöbe-Buglé</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="on6bw00pur8r">
+                                       <span class="s_website_form_label_content">6. Número de identificación (cédula, pasaporte u otro)</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="number" class="form-control s_website_form_input" name="x_studio_identificacin_paciente" required="1" value="" placeholder="" id="on6bw00pur8r" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div>
+                                    <label class="s_website_form_label form-label" for="xagobx4h3tp" style="width: 224px !important;">
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">7. Sistema de salud que utiliza la persona con diabetes tipo 1 para tratar esta condición *</span>
+                                    </label>
+                                 </div>
+                                 <div style="font-size: 14px;" class="py-2 s_website_form_field col-12 s_website_form_required select2_multi d-none" data-name="Field">
+                                    <label class="s_website_form_label d-none form-label" style="width: 224px" for="ovqr1mmvyk1i">
+                                    <span class="s_website_form_label_content">Sistema de Salud</span>
+                                    <span class="s_website_form_mark"> *</span>
+                                    </label>
+                                    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+                                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"/>
+                                    <script type="text/javascript">
+                                       jQuery(document).ready(function () {
+                                           $('.js-example-basic-multiple').select2();
+                                       });
+                                    </script>
+                                    <select class="form-control s_website_form_input js-example-basic-multiple" name="x_studio_many2one_field_s8eOq_1" id="ovqr1mmvyk1i_1" style="" multiple="multiple">
+                                       <option value="1">Sistema público - Caja del seguro social</option>
+                                       <option value="2">Sistema público - Ministerio de salud</option>
+                                       <option value="3">Sistema privado-Consulta particular o privada</option>
+                                    </select>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" style="font-size: 14px;" class="py-2 s_website_form_field col-12 s_website_form_required no_select2_multi" data-type="many2one" data-name="Field">
+                                    <label class="s_website_form_label d-none form-label" style="width: 224px" for="ovqr1mmvyk1i">
+                                    <span class="s_website_form_label_content">Sistema de Salud</span>
+                                    <span class="s_website_form_mark"> *</span>
+                                    </label>
+                                    <select class="form-control s_website_form_input" name="x_studio_many2one_field_s8eOq" id="ovqr1mmvyk1i" style="">
+                                       <option value="1">Público</option>
+                                       <option value="2">Privado</option>
+                                       <option value="3">Combinación público y privado</option>
+                                       <!-- <option value="4">Otro (especificar)</option>
+                                       <option selected="selected">-</option> -->
+                                    </select>
+                                 </div>
+                                 <div data-visibility-between="" data-visibility-dependency="x_studio_many2one_field_s8eOq" class="py-2 s_website_form_field col-12 s_website_form_field_hidden_if d-none" data-type="text" data-name="Field" data-visibility-condition="4" data-visibility-comparator="selected">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label text-end form-label" style="width: 224px" for="ogakhwi54m6h">
+                                       <span class="s_website_form_label_content">Especifique</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <textarea class="form-control s_website_form_input" name="x_studio_detalle" placeholder="" id="ogakhwi54m6h" rows="2"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <br/>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="date" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="o4r3z1fmo91v">
+                                       <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">8. Fecha de Nacimiento</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <div class="s_website_form_date input-group date" id="datepicker9104592689002085" data-target-input="nearest">
+                                             <input type="text" class="form-control d-none datetimepicker-input s_website_form_input" data-bs-target="#datepicker9104592689002085" name="x_studio_fecha_de_nacimiento" placeholder="" id="o4r3z1fmo91v" data-fill-with="undefined"/>
+                                             <input type="date" class="form-control datetimepicker-input s_website_form_input" data-bs-target="#datepicker9104592689002085" name="x_studio_fecha_de_nacimiento" required="1" placeholder="" id="o4r3z1fmo91v" data-fill-with="undefined"/>
+                                             <div class="input-group-text d-none">
+                                                <i class="fa fa-calendar"/>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="date" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="oagh7er97aze">
+                                       <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">9. Fecha de diagnóstico</span>
+                                       <span class="s_website_form_mark"> *</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <div class="s_website_form_date input-group date" id="datepicker8194233350914946" data-target-input="nearest">
+                                             <input type="text" class="form-control d-none datetimepicker-input s_website_form_input" data-bs-target="#datepicker8194233350914946" name="x_studio_fecha_de_diagnostico" placeholder="" id="oagh7er97aze" data-fill-with="undefined"/>
+                                             <input type="date" class="form-control datetimepicker-input s_website_form_input" data-bs-target="#datepicker8194233350914946" name="x_studio_fecha_de_diagnostico" required="1" placeholder="" id="oagh7er97aze" data-fill-with="undefined"/>
+                                             <div class="input-group-text d-none">
+                                                <i class="fa fa-calendar"/>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <br/>
+                                 <div class="d-none">
+                                    <label class="s_website_form_label form-label" for="okki0rpgta5" style="width: 224px !important;">
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">12. ¿La persona con diabetes tipo 1 tiene otras condiciones médicas además de la diabetes tipo 1? *</span>
+                                    <br/>
+                                    <i>
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166); font-size: 12px;">Puedes elegir más de una respuesta</span>
+                                    </i>
+                                    </label>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required d-none" data-type="many2many" data-name="Field">
+                                    <label class="s_website_form_label d-none form-label" style="width: 224px" for="onoiicxysxm">
+                                    <span class="s_website_form_label_content">Condiciones Médicas</span>
+                                    <span class="s_website_form_mark"> *</span>
+                                    </label>
+                                    <div class="row s_col_no_resize s_col_no_bgcolor s_website_form_multiple" data-name="x_studio_many2many_field_8aMks" data-bs-display="vertical">
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onoiicxysxm0" name="x_studio_many2many_field_8aMks" value="1" data-fill-with="undefined"/>
+                                             <label class="form-check-label s_website_form_check_label" for="onoiicxysxm0">
+                                             Colesterol elevado
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onoiicxysxm1" name="x_studio_many2many_field_8aMks" value="2" />
+                                             <label class="form-check-label s_website_form_check_label" for="onoiicxysxm1">
+                                             Talla baja
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onoiicxysxm2" name="x_studio_many2many_field_8aMks" value="3"/>
+                                             <label class="form-check-label s_website_form_check_label" for="onoiicxysxm2">
+                                             Enfermedad celiaca
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onoiicxysxm3" name="x_studio_many2many_field_8aMks" value="4"/>
+                                             <label class="form-check-label s_website_form_check_label" for="onoiicxysxm3">
+                                             Vitiligo
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onoiicxysxm4" name="x_studio_many2many_field_8aMks" value="5" />
+                                             <label class="form-check-label s_website_form_check_label" for="onoiicxysxm4">
+                                             Problemas de tiroide
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onoiicxysxm5" name="x_studio_many2many_field_8aMks" value="6"/>
+                                             <label class="form-check-label s_website_form_check_label" for="onoiicxysxm5">
+                                             Obesidad
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onoiicxysxm6" name="x_studio_many2many_field_8aMks" value="7"/>
+                                             <label class="form-check-label s_website_form_check_label" for="onoiicxysxm6">
+                                             Alteraciones renales
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onoiicxysxm7" name="x_studio_many2many_field_8aMks" value="8"/>
+                                             <label class="form-check-label s_website_form_check_label" for="onoiicxysxm7">
+                                             Epilepsia
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onoiicxysxm8" name="x_studio_many2many_field_8aMks" value="9"/>
+                                             <label class="form-check-label s_website_form_check_label" for="onoiicxysxm8">
+                                             Pubertad precoz
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onoiicxysxm9" name="x_studio_many2many_field_8aMks" value="10"/>
+                                             <label class="form-check-label s_website_form_check_label" for="onoiicxysxm9">
+                                             Otro (especifique)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onoiicxysxm10" name="x_studio_many2many_field_8aMks" value="11"/>
+                                             <label class="form-check-label s_website_form_check_label" for="onoiicxysxm10">
+                                             No tiene otras condiciones
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-between="" class="py-2 s_website_form_field col-12 d-none" data-type="char" data-name="Field" id="especifiqueP12_validate">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label text-end form-label" style="width: 224px" for="ox6mgilexfrn">
+                                       <span class="s_website_form_label_content">Especifique</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_otro_pad" value="" placeholder="" id="ox6mgilexfrn" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 d-none s_website_form_required" data-type="many2many" data-name="Field">
+                                    <label class="s_website_form_label form-label" style="width: 224px" for="ofde96lcq1gl">
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">13. ¿Ha tenido la persona con diabetes tipo 1 una emergencia por la diabetes el último año que ha requerido asistencia u hospitalización? *</span>
+                                    <br/>
+                                    <i>
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166); font-size: 12px;">Puedes elegir más de una respuesta</span>
+                                    </i>
+                                    <span class="s_website_form_mark"> *</span>
+                                    </label>
+                                    <div class="row s_col_no_resize s_col_no_bgcolor s_website_form_multiple" data-name="x_studio_many2many_field_bnBGH" data-bs-display="vertical">
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="ofde96lcq1gl0" name="x_studio_many2many_field_bnBGH" value="1"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ofde96lcq1gl0">
+                                             Si, hipoglicemia (azúcar baja)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="ofde96lcq1gl1" name="x_studio_many2many_field_bnBGH" value="2"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ofde96lcq1gl1">
+                                             Si, hiperglicemia (azúcar alta)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="ofde96lcq1gl2" name="x_studio_many2many_field_bnBGH" value="3"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ofde96lcq1gl2">
+                                             Si, CAD (Cetoacidosis diabética)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="ofde96lcq1gl3" name="x_studio_many2many_field_bnBGH" value="4"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ofde96lcq1gl3">
+                                             No
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="ofde96lcq1gl4" name="x_studio_many2many_field_bnBGH" value="5"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ofde96lcq1gl4">
+                                             No sé
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <br/>
+                                 <div class="d-none">
+                                    <label class="col-sm-auto s_website_form_label form-label" style="width: 224px !important;">
+                                    <span style="color: rgb(40, 116, 166);">14. Datos de tu prueba más reciente de Hemoglobina Glicosilada (HbA1c)</span>
+                                    </label>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 d-none" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="ojnjby83wr3k">
+                                       <span class="s_website_form_label_content">Valor de HbA1c %</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_valor_de_hba1c" value="" placeholder="Valor de prueba mas reciente de HbA1c " id="ojnjby83wr3k" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="d-none py-2 s_website_form_field col-12" data-type="date" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="ol3ldlddb0o">
+                                       <span class="s_website_form_label_content">Fecha HbA1c</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <div class="s_website_form_date input-group date" id="datepicker5770121443687781" data-target-input="nearest">
+                                             <input type="text" class="form-control datetimepicker-input s_website_form_input" data-bs-target="#datepicker5770121443687781" name="x_studio_fecha_hba1c" placeholder="Fecha de valor de prueba mas reciente de HbA1c" id="ol3ldlddb0o" data-fill-with="undefined"/>
+                                             <div class="input-group-text">
+                                                <i class="fa fa-calendar"/>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 d-none doctor_name" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label form-label" style="width: 224px" for="ouwms9g86h5o">
+                                       <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">10. Nombre del médico tratante de la diabetes</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <select class="form-control s_website_form_input medico_type" name="x_studio_nombre_del_medico_tratante_de_la_diabetes">
+                                             <option value="1">Medico 1</option>
+                                             <option value="2">Medico 2</option>
+                                             <option value="3">Medico 3</option>
+                                             <option value="4">Otro medico</option>
+                                          </select>
+                                          <div class="row pt-3 d-none" id="other_medico">
+                                             <div class="col-3">
+                                                <label>Otro medico</label>
+                                             </div>
+                                             <div class="col-9">
+                                                <input type="text" class="form-control s_website_form_input" name="other_medico" value="" placeholder=""/>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <br/>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="card" data-name="Item" style="">
+                           <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="false" class="card-header collapsed" data-bs-target="#myCollapseTab1647024375504">
+                              <p>
+                                 <span style="font-weight: bolder;">
+                                 <font style="color: rgb(57, 132, 198);">3. Tratamiento de insulinas y Monitoreo de glucemia/azúcar</font>
+                                 </span>
+                                 <br/>
+                              </p>
+                           </a>
+                           <div class="collapse" data-bs-parent="#myCollapse1644617309228" role="tabpanel" id="myCollapseTab1647024375504" style="">
+                              <div class="card-body" data-bs-original-title="" title="" aria-describedby="tooltip226232">
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="selection" data-name="Field">
+                                    <label class="s_website_form_label form-label" style="width: 200px;color: rgb(40, 116, 166);" for="o8kfec12q4hx">
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">1. ¿Qué insulina BASAL/LENTA está utilizando? Escoge sólo una opción:</span>
+                                    <span class="s_website_form_mark"> *</span>
+                                    </label>
+                                    <div class="row s_col_no_resize s_col_no_bgcolor s_website_form_multiple" data-name="x_studio_rgimen_de_insulinas_accin_intermedia" data-bs-display="vertical">
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="o8kfec12q4hx0" name="x_studio_rgimen_de_insulinas_accin_intermedia" value="NPH (Insuman)" required="1" data-fill-with="undefined"/>
+                                             <label class="form-check-label s_website_form_check_label" for="o8kfec12q4hx0">
+                                             Humana de acción intermedia (NPH; conocida como: Humulin N, Novolin N, turbia, vial verde, etc)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="o8kfec12q4hx1" name="x_studio_rgimen_de_insulinas_accin_intermedia" value="NPH (Humulin N)" required="1"/>
+                                             <label class="form-check-label s_website_form_check_label" for="o8kfec12q4hx1">
+                                             Análoga de acción prolongada (Glargina, Detemir, Degludec; conocidas como: Lantus, Abasaglar, Toujeo, Levemir, Tresiba, etc)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="o8kfec12q4hx2" name="x_studio_rgimen_de_insulinas_accin_intermedia" value="NPH (Novolin N)" required="1"/>
+                                             <label class="form-check-label s_website_form_check_label" for="o8kfec12q4hx2">
+                                             No uso insulina basal
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <!-- <div class="radio col-12 ">
+                                          <div class="form-check">
+                                            <input type="radio" class="s_website_form_input form-check-input" id="o8kfec12q4hx3" name="x_studio_rgimen_de_insulinas_accin_intermedia" value="Insulina Pre-mezclada (NPH + Humana)" required="1"/>
+                                            <label class="form-check-label s_website_form_check_label" for="o8kfec12q4hx3">
+                                          No sé
+                                          </label>
+                                          </div>
+                                          </div>
+                                          <div class="radio col-12 ">
+                                          <div class="form-check">
+                                            <input type="radio" class="s_website_form_input form-check-input" id="o8kfec12q4hx4" name="x_studio_rgimen_de_insulinas_accin_intermedia" value="Insulina Pre-mezclada (NPH + Análoga acción rápida)" required="1"/>
+                                            <label class="form-check-label s_website_form_check_label" for="o8kfec12q4hx4">
+                                          Insulina Pre-mezclada (NPH + Análoga acción rápida)
+                                          </label>
+                                          </div>
+                                          </div>
+                                          <div class="radio col-12 ">
+                                          <div class="form-check">
+                                            <input type="radio" class="s_website_form_input form-check-input" id="o8kfec12q4hx5" name="x_studio_rgimen_de_insulinas_accin_intermedia" value="No utiliza régimen de Acción intermedia" required="1"/>
+                                            <label class="form-check-label s_website_form_check_label" for="o8kfec12q4hx5">
+                                          No utiliza insulinas de Acción Intermedia
+                                          </label>
+                                          </div>
+                                          </div> -->
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="o8kfec12q4hx6" name="x_studio_rgimen_de_insulinas_accin_intermedia" value="No sé" required="1"/>
+                                             <label class="form-check-label s_website_form_check_label" for="o8kfec12q4hx6">
+                                             No sé
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="o8kfec12q4hx7" name="x_studio_rgimen_de_insulinas_accin_intermedia" value="Otro (Especifique)" required="1"/>
+                                             <label class="form-check-label s_website_form_check_label" for="o8kfec12q4hx7">
+                                             Otro (Especifique)
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-between="" data-visibility-dependency="x_studio_rgimen_de_insulinas_accin_intermedia" class="py-2 s_website_form_field col-12 s_website_form_field_hidden_if d-none" data-type="char" data-name="Field" data-visibility-condition="Otro (Especifique)" data-visibility-comparator="selected">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label text-end form-label" style="width: 224px" for="oeiin0jui0y">
+                                       <span class="s_website_form_label_content">Especifique</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_detalle_insulina_accin_intermedia" value="" placeholder="" id="oeiin0jui0y" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="selection" data-name="Field">
+                                    <label class="s_website_form_label form-label" style="width: 200px;color: rgb(40, 116, 166);" for="oxnkqvgh996">
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">2. ¿Qué insulina RÁPIDA (para comidas y correcciones) está utilizando? Escoge sólo una opción:</span>
+                                    <span class="s_website_form_mark"> *</span>
+                                    </label>
+                                    <div class="row s_col_no_resize s_col_no_bgcolor s_website_form_multiple" data-name="x_studio_rgimen_de_insulinas_regular_r_cristalina" data-bs-display="vertical">
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="oxnkqvgh9960" name="x_studio_rgimen_de_insulinas_regular_r_cristalina" value="Insumar R" required="1" data-fill-with="undefined"/>
+                                             <label class="form-check-label s_website_form_check_label" for="oxnkqvgh9960">
+                                             Humana de acción rápida (conocida como: Regular Humulin R, Novolin R, cristalina, vial amarillo
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="oxnkqvgh9961" name="x_studio_rgimen_de_insulinas_regular_r_cristalina" value="Humulin R" required="1"/>
+                                             <label class="form-check-label s_website_form_check_label" for="oxnkqvgh9961">
+                                             Análoga de acción rápida (Aspart, Lispro, Glisulina, conocidas como: Humalog, NovoRapid, Apidra, Shorant, Fiasp, Actrapid, Lyumjev, Admelog, Trurapi, etc)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <!-- <div class="radio col-12 ">
+                                          <div class="form-check">
+                                            <input type="radio" class="s_website_form_input form-check-input" id="oxnkqvgh9962" name="x_studio_rgimen_de_insulinas_regular_r_cristalina" value="Novolin R" required="1"/>
+                                            <label class="form-check-label s_website_form_check_label" for="oxnkqvgh9962">
+                                          Novolin R
+                                          </label>
+                                          </div>
+                                          </div>
+                                          <div class="radio col-12 ">
+                                          <div class="form-check">
+                                            <input type="radio" class="s_website_form_input form-check-input" id="oxnkqvgh9963" name="x_studio_rgimen_de_insulinas_regular_r_cristalina" value="No utiliza Régimen Regular R Cristalina" required="1"/>
+                                            <label class="form-check-label s_website_form_check_label" for="oxnkqvgh9963">
+                                          No utiliza Insulinas Regulares
+                                          </label>
+                                          </div>
+                                          </div>
+                                          <div class="radio col-12 ">
+                                          <div class="form-check">
+                                            <input type="radio" class="s_website_form_input form-check-input" id="oxnkqvgh9964" name="x_studio_rgimen_de_insulinas_regular_r_cristalina" value="No sé" required="1"/>
+                                            <label class="form-check-label s_website_form_check_label" for="oxnkqvgh9964">
+                                          No sé
+                                          </label>
+                                          </div>
+                                          </div> -->
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="oxnkqvgh9965" name="x_studio_rgimen_de_insulinas_regular_r_cristalina" value="Otro (Especifique)" required="1"/>
+                                             <label class="form-check-label s_website_form_check_label" for="oxnkqvgh9965">
+                                             Otro (Especifique)
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-between="" data-visibility-dependency="x_studio_rgimen_de_insulinas_regular_r_cristalina" class="py-2 s_website_form_field col-12 s_website_form_field_hidden_if d-none" data-type="char" data-name="Field" data-visibility-condition="Otro (Especifique)" data-visibility-comparator="selected">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label text-end form-label" style="width: 224px" for="opqbyo1buzuj">
+                                       <span class="s_website_form_label_content">Especifique</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_detalle_r_cristalina" value="" placeholder="" id="opqbyo1buzuj" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 d-none s_website_form_field col-12 s_website_form_required" data-type="selection" data-name="Field">
+                                    <label class="s_website_form_label form-label" style="width: 200px;color: rgb(40, 116, 166);" for="o3pvt6xsb1bb">
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">3. Insulina de Acción Rápida</span>
+                                    <span class="s_website_form_mark"> *</span>
+                                    </label>
+                                    <div class="row s_col_no_resize s_col_no_bgcolor s_website_form_multiple" data-name="x_studio_rgimen_de_insulinas_accin_rpida" data-bs-display="vertical">
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="o3pvt6xsb1bb0" name="x_studio_rgimen_de_insulinas_accin_rpida" value="Aspart (Novorapid)" data-fill-with="undefined"/>
+                                             <label class="form-check-label s_website_form_check_label" for="o3pvt6xsb1bb0">
+                                             Aspart (Novorapid)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="o3pvt6xsb1bb1" name="x_studio_rgimen_de_insulinas_accin_rpida" value="Lispro (Humalog)"/>
+                                             <label class="form-check-label s_website_form_check_label" for="o3pvt6xsb1bb1">
+                                             Lispro (Humalog)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="o3pvt6xsb1bb2" name="x_studio_rgimen_de_insulinas_accin_rpida" value="Glulisina (Shorant)"/>
+                                             <label class="form-check-label s_website_form_check_label" for="o3pvt6xsb1bb2">
+                                             Glulisina (Shorant)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="o3pvt6xsb1bb3" name="x_studio_rgimen_de_insulinas_accin_rpida" value="Glulisina (Apidra)"/>
+                                             <label class="form-check-label s_website_form_check_label" for="o3pvt6xsb1bb3">
+                                             Glulisina (Apidra)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="o3pvt6xsb1bb4" name="x_studio_rgimen_de_insulinas_accin_rpida" value="No utiliza Régimen de Acción Rápida"/>
+                                             <label class="form-check-label s_website_form_check_label" for="o3pvt6xsb1bb4">
+                                             No utiliza Insulinas Ultra Rápidas
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="o3pvt6xsb1bb5" name="x_studio_rgimen_de_insulinas_accin_rpida" value="No sé"/>
+                                             <label class="form-check-label s_website_form_check_label" for="o3pvt6xsb1bb5">
+                                             No sé
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="o3pvt6xsb1bb6" name="x_studio_rgimen_de_insulinas_accin_rpida" value="Otro (Especifique)"/>
+                                             <label class="form-check-label s_website_form_check_label" for="o3pvt6xsb1bb6">
+                                             Otro (Especifique)
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-between="" data-visibility-dependency="x_studio_rgimen_de_insulinas_accin_rpida" class="py-2 d-none s_website_form_field col-12 s_website_form_field_hidden_if d-none" data-type="char" data-name="Field" data-visibility-condition="Otro (Especifique)" data-visibility-comparator="selected">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label text-end form-label" style="width: 224px" for="o8fjejv79szg">
+                                       <span class="s_website_form_label_content">Especifique</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_detalle_insulina_accin_rpida" value="" placeholder="" id="o8fjejv79szg" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="d-none py-2 s_website_form_field col-12 s_website_form_required" data-type="selection" data-name="Field">
+                                    <label class="s_website_form_label form-label" style="width: 200px" for="ojxpm7ci4dl">
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">4. Insulina Basal o de Acción Prolongada/Lenta</span>
+                                    <span class="s_website_form_mark"> *</span>
+                                    </label>
+                                    <div class="row s_col_no_resize s_col_no_bgcolor s_website_form_multiple" data-name="x_studio_rgimen_de_insulinas_accin_prolongada_lenta_basal" data-bs-display="vertical">
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="ojxpm7ci4dl0" name="x_studio_rgimen_de_insulinas_accin_prolongada_lenta_basal" value="Glargina (Lantus)" data-fill-with="undefined"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ojxpm7ci4dl0">
+                                             Glargina (Lantus)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="ojxpm7ci4dl1" name="x_studio_rgimen_de_insulinas_accin_prolongada_lenta_basal" value="Detemir (Levemir)"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ojxpm7ci4dl1">
+                                             Detemir (Levemir)
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="ojxpm7ci4dl2" name="x_studio_rgimen_de_insulinas_accin_prolongada_lenta_basal" value="No utiliza Régimen de Acción Prolongada"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ojxpm7ci4dl2">
+                                             No utiliza Insulinas Prolongadas
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="radio col-12 ">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="ojxpm7ci4dl3" name="x_studio_rgimen_de_insulinas_accin_prolongada_lenta_basal" value="Otro (Especifique)"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ojxpm7ci4dl3">
+                                             Otro (Especifique)
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-between="" data-visibility-dependency="x_studio_rgimen_de_insulinas_accin_prolongada_lenta_basal" class="d-none py-2 s_website_form_field col-12 s_website_form_field_hidden_if d-none" data-type="char" data-name="Field" data-visibility-condition="Otro (Especifique)" data-visibility-comparator="selected">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label text-end form-label" style="width: 224px" for="o74npdzk84l4">
+                                       <span class="s_website_form_label_content">Especifique</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_especifique" value="" placeholder="" id="o74npdzk84l4" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="many2many" data-name="Field">
+                                    <label class="s_website_form_label form-label" style="width: 200px;color: rgb(40, 116, 166);" for="onjeoop8of0j">
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">3. Método de aplicación de la insulina. Puedes escoger una opción.</span>
+                                    <span class="s_website_form_mark">                  *</span>
+                                    </label>
+                                    <div class="row s_col_no_resize s_col_no_bgcolor s_website_form_multiple" data-name="x_studio_many2many_field_YyKw8" data-bs-display="vertical">
+                                       <select class="form-control s_website_form_input" name="x_studio_many2many_field_YyKw8">
+                                             <option value="1">Bomba o microinfusora de insulina</option>
+                                             <option value="2">Jeringuillas, pens , bolígrafos, otros</option>
+                                          </select>
+                                       <!-- <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onjeoop8of0j0" name="x_studio_many2many_field_YyKw8" value="1" required="1" data-fill-with="undefined"/>
+                                             <label class="form-check-label s_website_form_check_label" for="onjeoop8of0j0">
+                                             Bomba o microinfusora de insulina
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                             <input type="checkbox" class="s_website_form_input form-check-input" id="onjeoop8of0j1" name="x_studio_many2many_field_YyKw8q" value="2" required="1"/>
+                                             <label class="form-check-label s_website_form_check_label" for="onjeoop8of0j1">
+                                             Jeringuillas, pens , bolígrafos, otros
+                                             </label>
+                                          </div>
+                                       </div> -->
+                                       <!-- <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                            <input type="checkbox" class="s_website_form_input form-check-input" id="onjeoop8of0j2" name="x_studio_many2many_field_YyKw8" value="3" required="1"/>
+                                            <label class="form-check-label s_website_form_check_label" for="onjeoop8of0j2">
+                                          Bomba de Insulina
+                                          </label>
+                                          </div>
+                                          </div> -->
+                                       <!-- <div class="checkbox col-12 ">
+                                          <div class="form-check">
+                                            <input type="checkbox" class="s_website_form_input form-check-input" id="onjeoop8of0j3" name="x_studio_many2many_field_YyKw8" value="4" required="1"/>
+                                            <label class="form-check-label s_website_form_check_label" for="onjeoop8of0j3">
+                                          Otro (Especifique)
+                                          </label>
+                                          </div>
+                                          </div> -->
+                                    </div>
+                                 </div>
+                                 <div data-visibility-between="" class="py-2 s_website_form_field col-12 d-none" data-type="char" data-name="Field" id="especifiqueP5_validate">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label text-end form-label" style="width: 224px" for="oqeg5ietrfu">
+                                       <span class="s_website_form_label_content">Especifique</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_otro" value="" placeholder="" id="oqeg5ietrfu" data-fill-with="undefined"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <br/>
+                                 <div class="d-none">
+                                    <label class="s_website_form_label form-label" for="o4c72ggpb5qs" style="width: 224px !important;">
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">6. ¿Si usas glucómetro o medidor de glucemia/azúcar en la sangre, cuántas veces al día te mides la glucemia/azúcar?</span>
+                                    </label>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="d-none py-2 s_website_form_field col-12" data-type="many2one" data-name="Field">
+                                    <label class="s_website_form_label d-none form-label" style="width: 224px" for="oldw445kqdb">
+                                    <span class="s_website_form_label_content">Veces al día que te mides la glucemia</span>
+                                    </label>
+                                    <select class="form-control s_website_form_input" name="x_studio_many2one_field_BJ5FI" id="oldw445kqdb" style="">
+                                       <option value="1">0</option>
+                                       <option value="2">1</option>
+                                       <option value="3">2</option>
+                                       <option value="4">3</option>
+                                       <option value="5">4</option>
+                                       <option value="6">5</option>
+                                       <option value="7">6</option>
+                                       <option value="8">7</option>
+                                       <option value="9">8</option>
+                                       <option value="10">9</option>
+                                       <option value="11">10</option>
+                                       <option value="12">11</option>
+                                       <option value="13">12</option>
+                                       <option value="14">13</option>
+                                       <option value="15">14</option>
+                                       <option value="16">15</option>
+                                       <option value="17">16</option>
+                                       <option value="18">17</option>
+                                       <option value="19">18</option>
+                                       <option value="20">19</option>
+                                       <option value="21">20</option>
+                                    </select>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="d-none py-2 s_website_form_field col-12" data-type="boolean" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <div class="col-sm">
+                                          <div class="form-check">
+                                             <input type="checkbox" value="Yes" class="s_website_form_input" name="x_studio_no_me_mido_la_glucemiaazcar" id="ow3l5ykplbvm" data-fill-with="undefined"/>
+                                             <label class="col-sm-auto s_website_form_label form-label" style="width: 224px" for="ow3l5ykplbvm">
+                                             <span class="s_website_form_label_content">No me mido la glucemia/azúcar</span>
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <br/>
+                                 <div>
+                                    <label class="col-sm-auto s_website_form_label form-label" for="3umqfv57jap" style="width: 224px !important;">
+                                    <span class="s_website_form_label_content" style="color: rgb(40, 116, 166);">4. ¿Usas algún sistema de monitoreo continuo de glucemia? Puedes escoger sólo una opción.</span>
+                                    </label>
+                                 </div>
+                                 <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12" data-type="many2many" data-name="Field">
+                                    <label class="s_website_form_label d-none form-label" style="width: 224px" for="ocwgfnwhp4kn">
+                                    <span class="s_website_form_label_content">Monitoreo glicemia</span>
+                                    </label>
+                                    <div class="row s_col_no_resize s_col_no_bgcolor s_website_form_multiple" data-name="x_studio_many2many_field_CglRU" data-bs-display="horizontal">
+                                       <div class="checkbox col-12 col-lg-4 col-md-6">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="ocwgfnwhp4kn0" name="x_studio_many2many_field_CglRU" value="1" data-fill-with="undefined"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ocwgfnwhp4kn0">
+                                             No uso
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 col-lg-4 col-md-6">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="ocwgfnwhp4kn1" name="x_studio_many2many_field_CglRU" value="2"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ocwgfnwhp4kn1">
+                                             Dexcom
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 col-lg-4 col-md-6">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="ocwgfnwhp4kn2" name="x_studio_many2many_field_CglRU" value="4"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ocwgfnwhp4kn2">
+                                             VivaChek
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 col-lg-4 col-md-6">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="ocwgfnwhp4kn3" name="x_studio_many2many_field_CglRU" value="3"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ocwgfnwhp4kn3">
+                                             Eversense
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 col-lg-4 col-md-6">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="ocwgfnwhp4kn4" name="x_studio_many2many_field_CglRU" value="5"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ocwgfnwhp4kn4">
+                                             Freestyle
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 col-lg-4 col-md-6">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="ocwgfnwhp4kn5" name="x_studio_many2many_field_CglRU" value="6"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ocwgfnwhp4kn5">
+                                             Medtronic
+                                             </label>
+                                          </div>
+                                       </div>
+                                       <div class="checkbox col-12 col-lg-4 col-md-6">
+                                          <div class="form-check">
+                                             <input type="radio" class="s_website_form_input form-check-input" id="ocwgfnwhp4kn6" name="x_studio_many2many_field_CglRU" value="7"/>
+                                             <label class="form-check-label s_website_form_check_label" for="ocwgfnwhp4kn6">
+                                             Otro (especifique)
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div data-visibility-between="" class="py-2 s_website_form_field col-12 d-none" data-type="char" data-name="Field" id="especifiqueP7_validate">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                       <label class="col-form-label col-sm-auto s_website_form_label text-end form-label" style="width: 224px" for="o7essytw2kft">
+                                       <span class="s_website_form_label_content">Especifique</span>
+                                       </label>
+                                       <div class="col-sm">
+                                          <input type="text" class="form-control s_website_form_input" name="x_studio_describa" value="" placeholder="" id="o7essytw2kft" style="font-size: 14px;"/>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="card" data-name="Item" style="">
+                           <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="false" class="card-header collapsed" data-bs-target="#myCollapseTab1647024917315">
+                              <p>
+                                 <span style="font-weight: bolder;">
+                                 <font style="color: rgb(57, 132, 198);">4. Política de Privacidad</font>
+                                 </span>
+                                 <br/>
+                              </p>
+                           </a>
+                           <div data-bs-parent="#myCollapse1644617309228" role="tabpanel" id="myCollapseTab1647024917315" class="collapse" style="">
+                              <div class="card-body" data-bs-original-title="" title="" aria-describedby="tooltip226232">
+                                 <div>
+                                    <p class="card-text">
+                                       <font style="color: rgb(8, 82, 148); font-weight: bolder; font-size: 14px;">----- Por favor HAZ CLICK EN ACEPTAR al final del texto -----</font>
+                                    </p>
+                                 </div>
+                                 <section class="s_text_block pt40 pb40 o_colored_level" data-snippet="s_text_block" data-name="Text" style="background-image: none;">
+                                    <div class="container s_allow_columns">
+                                       <p class="card-text" style="text-align: justify;">
+                                          <span style="font-size: 14px;">La presente Política de
+                                          Privacidad establece los términos en que DiabetesLATAM usa y protege la
+                                          información que es proporcionada por sus usuarios al momento de utilizar su
+                                          sitio web y formulario de registro.&amp;nbsp;</span>
+                                       </p>
+                                       <p class="card-text" style="text-align: justify;">
+                                          <span style="font-size: 14px;">Esta organización está
+                                          comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos
+                                          llenar los campos de información personal con la cual usted pueda ser
+                                          identificado, lo hacemos asegurando que sólo se empleará de acuerdo con los
+                                          términos de este documento.&amp;nbsp;</span>
+                                       </p>
+                                       <p class="card-text" style="text-align: justify;">
+                                          <span style="font-size: 14px;">Sin embargo, esta Política
+                                          de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le recomendamos
+                                          y enfatizamos revisar continuamente esta página para asegurarse que está de
+                                          acuerdo con dichos cambios.</span>
+                                          <br/>
+                                          <br/>
+                                          <span style="font-weight: bolder; font-size: 14px;">
+                                          <font style="color: rgb(57, 132, 198);">Información que nos proporcionas</font>
+                                          </span>
+                                          <br/>
+                                          <span style="font-size: 14px;">Nuestro sitio web y
+                                          formulario podrá recoger información personal por ejemplo: Nombre, información
+                                          de contacto como su dirección de correo electrónico e información demográfica.
+                                          Así mismo cuando sea necesario podrá ser requerida información específica para
+                                          realizar registro a la organización o alguna de sus actividades o eventos.</span>
+                                       </p>
+                                       <p class="card-text" style="text-align: justify;">
+                                          <span style="font-size: 14px;">
+                                          <font style="color: rgb(57, 132, 198); font-weight: bolder;">Uso de la información recibida</font>
+                                          </span>
+                                       </p>
+                                       <p class="card-text" style="text-align: justify;">
+                                          <span style="font-size: 14px;">
+                                          <font style="font-weight: 400;" class="text-o-color-5">
+                                          Nuestro sitio web y
+                                          formulario emplea la información con el fin de proporcionar el mejor servicio
+                                          posible de las actividades de nuestra organización. &amp;nbsp;Es posible que sean
+                                          enviados correos electrónicos periódicamente a través de nuestro sitio o dirección
+                                          de correo electrónico con información de actividades, eventos o educación que
+                                          consideremos relevante para usted o que pueda brindarle algún beneficio, estos
+                                          correos electrónicos serán enviados a la dirección que usted proporcione.</font>
+                                          </span>
+                                       </p>
+                                       <p class="card-text" style="text-align: justify;">
+                                          <span style="font-size: 14px;">
+                                          <font style="font-weight: 400;" class="text-o-color-5">
+                                          DiabetesLATAM está
+                                          altamente comprometido para cumplir con el compromiso de mantener su
+                                          información segura. Usamos los sistemas más avanzados y los actualizamos
+                                          constantemente para asegurarnos que no exista ningún acceso no autorizado.</font>
+                                          </span>
+                                       </p>
+                                       <p class="card-text" style="text-align: justify;">
+                                          <span style="font-size: 14px;">
+                                          <font style="font-weight: 400; color: rgb(57, 132, 198);">
+                                          <span style="font-weight: bolder;">Información que nosotros
+                                          proporcionamos</span>
+                                          <br/>
+                                          </font>
+                                          <font style="font-weight: 400;" class="text-o-color-5">DiabetesLATAM, comprometida
+                                          con la educación y apoyo en español alrededor de la diabetes tipo 1, podrá
+                                          proporcionar material de investigación, así como información de eventos
+                                          desarrollados con las fotos de los mismos. Al aceptarse esta política, cada
+                                          miembro y visitante de la fundación da su consentimiento para la publicación de
+                                          fotografías y testimonios de sus miembros y familiares, con fines meramente
+                                          educativos e investigativos.</font>
+                                          </span>
+                                       </p>
+                                       <p class="card-text" style="text-align: justify;">
+                                          <span style="font-size: 14px;">
+                                          <font style="font-weight: 400; color: rgb(57, 132, 198);">
+                                          <span style="font-weight: bolder;">Cookies</span>
+                                          </font>
+                                          </span>
+                                       </p>
+                                       <p class="card-text" style="text-align: justify;">
+                                          <span style="font-size: 14px;">
+                                          <font style="font-weight: 400;" class="text-o-color-5">
+                                          <span style="font-weight: 400;">Una cookie se refiere a un
+                                          fichero que es enviado con la finalidad de solicitar permiso para almacenarse
+                                          en su ordenador, al aceptar dicho fichero se crea y la cookie sirve entonces
+                                          para tener información respecto al tráfico web, y también facilita las futuras
+                                          visitas a una web recurrente. Otra función que tienen las cookies es que, con
+                                          ellas, las webs pueden reconocerte individualmente y por tanto brindarte el
+                                          mejor servicio personalizado de su web.
+                                          &amp;nbsp;</span>
+                                          </font>
+                                          </span>
+                                       </p>
+                                       <p class="card-text" style="text-align: justify;">
+                                          <span style="font-size: 14px;">
+                                          <font style="font-weight: 400;" class="text-o-color-5">Nuestro sitio web emplea
+                                          las cookies para poder identificar las páginas que son visitadas y su
+                                          frecuencia. Esta información es empleada únicamente para análisis estadístico y
+                                          después la información se elimina de forma permanente. Usted puede eliminar las
+                                          cookies en cualquier momento desde su ordenador.</font>
+                                          </span>
+                                       </p>
+                                       <p class="card-text" style="text-align: justify;">
+                                          <span style="font-size: 14px;">
+                                          <font style="font-weight: 400;" class="text-o-color-5">
+                                          Sin embargo, las cookies
+                                          ayudan a proporcionar un mejor servicio de los sitios web, estas no dan acceso
+                                          a información de su ordenador ni de usted, a menos de que usted así lo quiera y
+                                          la proporcione directamente. Usted puede aceptar o negar el uso de cookies; sin
+                                          embargo, la mayoría de navegadores aceptan cookies automáticamente.
+                                          &amp;nbsp;
+                                          </font>
+                                          </span>
+                                          <br/>
+                                          <br/>
+                                       </p>
+                                    </div>
+                                    <div data-visibility-condition="" data-visibility-between="" class="py-2 s_website_form_field col-12 s_website_form_required" data-type="boolean" data-name="Field">
+                                       <div class="row s_col_no_resize s_col_no_bgcolor">
+                                          <label class="col-sm-auto s_website_form_label form-label" style="width: 224px" for="o52rm5lljunl">
+                                          <span class="s_website_form_label_content">Acepto Política de Privacidad de DiabetesLATAM</span>
+                                          <span class="s_website_form_mark">      *</span>
+                                          </label>
+                                          <div class="col-sm">
+                                             <div class="form-check">
+                                                <input type="checkbox" value="Yes" class="s_website_form_input" name="x_studio_acepta_poltica_de_privacidad_de_diabeteslatam" required="1" id="o52rm5lljunl" data-fill-with="undefined"/>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </section>
+                                 <div class="py-2 col-12 text-end s_website_form_no_submit_label" data-name="Submit Button" data-bs-original-title="" title="" aria-describedby="tooltip402440">
+                                    <div style="width: 224px !important;" class="s_website_form_label"/>
+                                       <a href="#" role="button" class="s_website_form_send btn btn-primary btn-lg" data-bs-original-title="" title="" style="margin-bottom: 15px;">
+                                          <span style="font-size: 18px; font-weight: bolder;" data-bs-original-title="" title="" aria-describedby="tooltip775109">Finalizar y enviar inscripción</span>
+                                       </a>&amp;nbsp;
+                                       <span id="s_website_form_result" class="text-danger ml8" style="visibility:hidden;"/><br/>
+                                    </div>
+                                 <div class="py-2 col-12 s_website_form_submit text-end s_website_form_no_submit_label d-none" data-name="Submit Button" data-bs-original-title="" title="" aria-describedby="tooltip402440">
+                                    <div style="width: 224px !important;" class="s_website_form_label"/>
+                                       <a href="#" role="button" class="s_website_form_send btn btn-primary btn-lg" data-bs-original-title="" title="" style="margin-bottom: 15px;">
+                                          <span style="font-size: 18px; font-weight: bolder;" data-bs-original-title="" title="" aria-describedby="tooltip775109">Finalizar y enviar inscripción</span>
+                                       </a>&amp;nbsp;<br/>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+               </section>
+               </div>
+            </form>
+            <input type="radio" class="s_website_form_input form-check-input d-none" id="o8kfec12q4hx012" name="x_studio_rgimen_de_insulinas_accin_intermedia" value="NPH (Insuman)" required="1" data-fill-with="undefined"/>
+            <input type="radio" class="d-none s_website_form_input form-check-input" id="o8kfec12q4hx011" name="x_studio_rgimen_de_insulinas_accin_intermedia" value="NPH (Insuman)" required="1" data-fill-with="undefined"/>
+            <input type="radio" class="d-none s_website_form_input form-check-input" id="o8kfec12q4hx0111" name="x_studio_rgimen_de_insulinas_accin_intermedia" value="NPH (Insuman)" required="1" data-fill-with="undefined"/>
+            <input type="radio" class="d-none s_website_form_input form-check-input" id="o8kfec12q4hx0111a" name="x_studio_rgimen_de_insulinas_regular_r_cristalina" value="NPH (Insuman)" required="1" data-fill-with="undefined"/>
+            <input type="radio" class="d-none s_website_form_input form-check-input" id="o8kfec12q4hx0111s" name="x_studio_rgimen_de_insulinas_regular_r_cristalina" value="NPH (Insuman)" required="1" data-fill-with="undefined"/>
+            <input type="radio" class="d-none s_website_form_input form-check-input" id="o8kfec12q4hx0111d" name="x_studio_rgimen_de_insulinas_regular_r_cristalina" value="NPH (Insuman)" required="1" data-fill-with="undefined"/>
+            <input type="radio" class="d-none s_website_form_input form-check-input" id="o8kfec12q4hx0111dqq" name="x_studio_many2many_field_YyKw8" value="NPH (Insuman)" required="1" data-fill-with="undefined"/>
+            <input type="radio" class="d-none s_website_form_input form-check-input" id="o8kfec1dqqass" name="x_studio_many2many_field_YyKw8" value="NPH (Insuman)" required="1" data-fill-with="undefined"/>
+            <input type="radio" class="d-none s_website_form_input form-check-input" id="o8kfec1dqqassdd" name="x_studio_many2many_field_YyKw8" value="NPH (Insuman)" required="1" data-fill-with="undefined"/>
+         </xpath>
+      </field>
+   </record>
+
+</odoo>

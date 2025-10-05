@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_crm_lead_opportunity_geo_assign_formwwww" model="ir.ui.view">
+        <field name="name">crm.lead.geo_assign.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="name" invisible="1"/>
+            </field>
+            <page name="extra" position="after">
+                <page string="Form Details">
+                    <h1 class="text-gray">Section 1</h1>
+                    <group>
+                        <group>
+                            <field name="middle_name"/>
+                            <field name="second_surname"/>
+                            <field name="identification_number"/>
+                            <field name="sex"/>
+                            <field name="country_of_residence"/>
+                            <field name="phone_or_cell_phone"/>
+                        </group>
+                        <group>
+                            <field name="type_diabetes"/>
+                            <field name="current_rule"/>
+                            <field name="type_2_diabetes"/>
+                            <field name="specifies"/>
+                            <field name="like_volunteer_or_leader"/>
+                        </group>
+                    </group>
+                    <h1 class="text-gray">Section 2</h1>
+                    <group>
+                        <group>
+                            <field name="first_name_2"/>
+                            <field name="middle_name_2"/>
+                            <field name="first_surname_2"/>
+                            <field name="second_surname_2"/>
+                            <field name="country_of_residence_2"/>
+                            <field name="address_2"/>
+                            <field name="city_2"/>
+                            <field name="province"/>
+                        </group>
+                        <group>
+                            <field name="identification_number_2"/>
+                            <field name="diabetes_treat_condition"/>
+                            <field name="speci_diabetes_treat_condition"/>
+                            <field name="diabetes_treat_conditions" widget="many2many_tags"/>
+                            <field name="dob_2"/>
+                            <field name="date_of_diagnosis"/>
+                            <field name="name_of_doc_treat_diabetes"/>
+                            <field name="other_medico"/>
+                        </group>
+                    </group>
+                    <h1 class="text-gray">Section 3</h1>
+                    <group>
+                        <group>
+                            <field name="insulin_use"/>
+                            <field name="other_insulin_use"/>
+                            <field name="rapid_insulin"/>
+                            <field name="other_rapid_insulin"/>
+                        </group>
+                        <group>
+                            <field name="method_of_insulin_1"/>
+                            <field name="blood_glucose_monitoring"/>
+                            <field name="spe_blood_glucose_monitoring"/> 
+                        </group>
+                    </group>
+                    <group>
+                        <field name="agreement_check"/>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>
