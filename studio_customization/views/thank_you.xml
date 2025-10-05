@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <odoo>
+    <data>
+      <!-- webpage record -->
+      <template id="thank_you" name="Thank You">
+        <t t-call="website.layout">
+          <div id="wrap" class="oe_structure oe_empty">
+            <h2 class="text-center text-success m-5 p-5">Congratulations Your form has been Submittd.</h2>
+          </div>
+        </t>
+      </template>
+    </data>
+  </odoo>
